@@ -2,6 +2,7 @@ pipeline {
   agent { 
     docker { 
       image 'mcr.microsoft.com/playwright:v1.45.1'
+      args '-u root:root'
     } 
   }
   stages {
