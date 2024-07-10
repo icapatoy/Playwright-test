@@ -1,6 +1,6 @@
 pipeline {
  stages {
-    stage('install playwright') {
+    stage('docker') {
       steps {
         sh '''
           sudo chmod 666 /var/run/docker.sock
