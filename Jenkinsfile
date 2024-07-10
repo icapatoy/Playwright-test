@@ -28,7 +28,7 @@ pipeline {
       }
       post {
         success {
-          archiveArtifacts(artifacts: 'homepage-*.png', followSymlinks: false)
+          archiveArtifacts(artifacts: 'test-results/*/tracer.zip', followSymlinks: false)
           sh 'rm -rf *.png'
         }
       }
