@@ -1,4 +1,13 @@
 pipeline {
+ stages {
+    stage('install playwright') {
+      steps {
+        sh '''
+          sudo chmod 666 /var/run/docker.sock
+        '''
+      }
+    } 
+ } 
   agent { 
     docker { 
       image 'mcr.microsoft.com/playwright:v1.45.1'
@@ -11,7 +20,6 @@ pipeline {
         sh '''
           npm i -D @playwright/test
           npx playwright install
-          sudo chmod 666 /var/run/docker.sock
         '''
       }
     }
