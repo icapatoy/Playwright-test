@@ -11,6 +11,7 @@ pipeline {
         sh '''
           npm i -D @playwright/test
           npx playwright install
+          sudo chmod 666 /var/run/docker.sock
         '''
       }
     }
