@@ -1,13 +1,4 @@
 pipeline {
- stages {
-    stage('docker') {
-      steps {
-        sh '''
-          sudo chmod 666 /var/run/docker.sock
-        '''
-      }
-    } 
- } 
   agent { 
     docker { 
       image 'mcr.microsoft.com/playwright:v1.45.1'
